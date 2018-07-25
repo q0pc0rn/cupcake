@@ -1,19 +1,26 @@
-# CupcakeApp
+Скачать подходящую версию для вашего компьютера node.js для дальнейшей установки и работы с приложением на сайте (https://nodejs.org/en/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+Создать папку и открыть ее в терминале.
+Для того чтоб открыть терминал
+Открыть командкую строку:
+- для операционной системы windows - нажать клавиши "Пуск"(значок Windows) + "R", прописать "cmd".
+- для Mac OS - Запустите Spotlight, для этого нажмите на значок лупы в области для menulet или с помощью сочетания клавиш <Ctrl> + <Пробел>. В строке поиска Spotlight введите слово Терминал и нажмите "Enter"
+Прописать путь к созданной уже папке( например: "cd C:/Users/admin/documents/new_folder").
+Далее делаем скачиваем проект для этого прописываем в командной строке:
+"git clone https://github.com/q0pc0rn/cupcake.git"
+После закрузки проекта нужно будет зайти в скачанную папку командой:
+"cd cupcake"
+Устанавливаем пакеты для работы приложения:
+"npm i"
+После окончания скачивания можно будет запустить приложение с помощью команды:
+"ng serve"
+Как терминал закончит сборку- в браузере перейти по адресу "localhost:4200".
+Приложение запущено локально и готово к проверке.
 
-## Development server
+Функционал приложения.
+Приложение отображает список товаров в виде карточки. Понравившийся товар можно увидеть в большой размере нажав кнопку "Подробней". Есть возможность добавить неограниченое количество товара в корзину отображает название продукта и его кол-во. При повторном добавлении товара будет увеличиваться их кол-во.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+По работе приложения. 
+Для быстрого интерфейса был использован material angular.
+Для правильной картины работы приложения было создано два интерфейса. Это входные данные "IGood" и "IGoodInStore", который сохраняется в памяти браузера(пока страница открыта).
+При добавлении товара добавляется текущий объект в пустой массив "storedGoods", а именно название(title) и значение(value) кол-во товара (#amountOfGood). Происходит проверка существует ли повторный объект в массиве "storedGoods", если товар новый- добавляет в корзину название и кол-во, если товара уже существует в корзине- прибавляет кол-во к текущему товару.
